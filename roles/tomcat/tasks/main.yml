@@ -1,0 +1,16 @@
+- name: Install Tomcat
+  apt:
+    name: tomcat9
+    state: present
+
+- name: Start Tomcat
+  service:
+    name: tomcat9
+    state: started
+    enabled: yes
+
+- name: Configure DB connection
+  template:
+    src: context.xml
+    dest: /etc/tomcat9/context.xml
+  notify: restart tomcat    

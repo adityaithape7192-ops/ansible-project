@@ -1,0 +1,11 @@
+<Context>
+  <Resource name="jdbc/mydb"
+            auth="Container"
+            type="javax.sql.DataSource"
+            username="myuser"
+            password="mypassword"
+            driverClassName="com.mysql.cj.jdbc.Driver"
+            url="jdbc:mysql://{{ hostvars['db']['ansible_host'] }}:3306/mydb"
+            maxActive="20"
+            maxIdle="10"/>
+</Context>
